@@ -4,7 +4,7 @@
 <div id="signup" style="background: #1B1B1B;">
     
     <div class="dx-signin text-center">
-        <h1 class="h3 text-white mb-30">Sign Up</h1>
+        <h1 class="h3 text-white mb-30">Regístrate</h1>
 
         <form method="POST" class="dx-form">
             {% csrf_token %}
@@ -20,23 +20,28 @@
             <div class="dx-form-group-md">
                 {{ reg_form.password2 }}
             </div>
+
+            
+            
             <div class="form-check-inline">
+                
                 <label class="form-check-container">
-                    <span class="label-text"> I am a Registered Doctor</span>   
+                    
+                    
                     {{ pro_form.is_doctor }}
-                    <span class="checkmark"></span>
+                    
                 </label>
             </div>
             
-              
             <div class="dx-form-group-md">
-                <input type="submit" value="Sign Up">
+                <input type="submit"  style="background: dimgray;" value="Registrarse">
             </div>
+            
             
 
             <div class="dx-form-group-md">
                 <div class="d-flex justify-content-between">
-                    <span style="color:#bababa;">Already have an account?</span>   
+                    <span style="color:#bababa;">¿No tienes una cuenta?</span>   
                     <a href="{% url 'login' %}" style="text-decoration: underline;">Log In</a>
                 </div>
             </div>
@@ -46,7 +51,7 @@
                 <!-- Error messaging -->
                 <div id="errors">
                     <div class="inner">
-                        <p>There were some errors in the information you entered. Please correct the following:</p>
+                        <p>Hay algunos errores en la información que ingresaste. Por favor ingresa correctamente lo siguiente:</p>
                         <ol style="text-align: left;">
                             {% for field in reg_form %}
                                 {% if field.errors %}
@@ -65,10 +70,10 @@
 
  <script>
     var form_fields = document.getElementsByTagName('input')
-    form_fields[1].placeholder = 'Username';
-    form_fields[2].placeholder = 'Email';
-    form_fields[3].placeholder = 'Password';
-    form_fields[4].placeholder = 'Confirm Password';
+    form_fields[1].placeholder = 'Usuario';
+    form_fields[2].placeholder = 'Correo Electrónico';
+    form_fields[3].placeholder = 'Contraseña';
+    form_fields[4].placeholder = 'Confirma Contraseña';
 
     
     var count = 1;

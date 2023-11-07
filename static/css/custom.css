@@ -67,7 +67,7 @@ body{
 .upvote-count, .downvote-count{
     border: ;
     width: 10px;
-    background-color: #2B72E6;
+    background-color: red;
     color: white;
     border-radius: 50%;
     padding: 5px 10px;

@@ -12,14 +12,14 @@
 
                         <h1 class="h3 dx-blog-post-title">{{ topic.title }}</h1>
                         <ul class="dx-blog-post-info">
-                            <li>Date Posted: {{ topic.date_created }}</li>
-                            <li>Total Views: {{ topic.topic_view_count }}</li>
+                            <li>Fecha de publicación: {{ topic.date_created }}</li>
+                            <li>Total Vistas: {{ topic.topic_view_count }}</li>
                             <!-- <li>Category:
                                 <ul class="dx-blog-post-categories">
                                     <li><a href="#">News</a></li>
                                 </ul>
                             </li> -->
-                            <li>Author: {{ topic.author.user }}</li>
+                            <li>Autor: {{ topic.author.user }}</li>
                         </ul>
                         <p class="mnb-2">{{ topic.description }}</p>
                     </div>
@@ -27,9 +27,9 @@
                 </div>
                 <div class="dx-box mt-55">
                     {% if  answers.count > 0 %}
-                    <h2 class="h4 mb-45">{{ answers.count }} answer{{ answers|pluralize }} in this topic: </h2>
+                    <h2 class="h4 mb-45">{{ answers.count }} answer{{ answers|pluralize }} en este hilo: </h2>
                     {% else %}
-                    <h2 class="h4 mb-45">Be the first to answer in this topic!</h2>
+                    <h2 class="h4 mb-45">Sé el primero en responder este hilo!</h2>
                     {% endif %}
                     {% for answer in answers %}
                     <div class="dx-comment">
@@ -45,12 +45,12 @@
                                     {% if answer.user.author.is_doctor %}
                                     <span class="dx-comment-profession">
                                         <img src="{% static 'images/badge-doctor.png' %}" width="45px;" alt="">
-                                        <span class="label-doctor">Certified Doctor</span>
+                                        <span class="label-doctor">Rol de Usuario</span>
                                     </span>
                                     {% else %}
                                     <span class="dx-comment-profession">
                                         <img src="{% static 'images/badge-user.png' %}" width="45px;" alt="">
-                                        <span class="label-user">General User</span>
+                                        <span class="label-user">Rol de Usuario</span>
                                     </span>
                                     {% endif %}
 
@@ -79,7 +79,7 @@
                             <div class="col-12">
                                 {% csrf_token %}
                                 {{ answer_form }}
-                                <input type="submit" class="dx-btn dx-btn-lg" value="Post Answer">
+                                <input type="submit" class="dx-btn dx-btn-lg" value="Publicar Respuesta">
                             </div>
                         </div>
                     </form>

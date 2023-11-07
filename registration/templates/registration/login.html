@@ -10,22 +10,22 @@
     </div>
     {% endif %}
     <div class="dx-signin-content dx-signin text-center">
-        <h1 class="h3 text-white mb-30">Log In</h1>
+        <h1 class="h3 text-white mb-30">Iniciar Sesión</h1>
         <form method="POST" action="" class="dx-form">
             {% csrf_token %}
             <div class="dx-form-group-md">
-                <input type="text" name="username" class="form-control form-control-style-4" placeholder="Username">
+                <input type="text" name="username" class="form-control form-control-style-4" placeholder="Usuario">
             </div>
             <div class="dx-form-group-md">
-                <input type="password" name="password" class="form-control form-control-style-4" placeholder="Password">
+                <input type="password" name="password" class="form-control form-control-style-4" placeholder="Contraseña">
             </div>
             <div class="dx-form-group-md">
-                <input type="submit" value="Log In" class="form-control form-control-style-4">
+                <input type="submit" value="Iniciar Sesión" class="form-control form-control-style-4" style="background: dimgray;">
             </div>
             <div class="dx-form-group-md">
                 <div class="d-flex justify-content-between">
-                    <a href="javascript:;">Don't have an account?</a>
-                    <a href="{% url 'register' %}" style="text-decoration: underline;">Sign Up</a>
+                    <a href="javascript:;">¿No tienes una cuenta?</a>
+                    <a href="{% url 'register' %}" style="text-decoration: underline;">Regístrate</a>
                 </div>
             </div>
         </form>

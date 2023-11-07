@@ -27,8 +27,18 @@
                     <div class="dx-box dx-box-decorated">
                         <div class="dx-blog-post">
                             <div class="dx-blog-post-box pt-30 pb-30">
+                                <h1 class="h2 mb-30 text-black text-center">Sección en Construcción :)</h1>
+                                
+                                
+                                <img src="{% static 'images/chang.png' %}" class="center" alt="chang-img" style="display: block;
+                                margin-left: auto;
+                                margin-right: auto;
+                                ">
+                                        
+                                
+                                
                                 {% for post in all_posts %}
-                                <a href="{% url 'article-detail' post.slug %}"><h2 class="h5" style="color: #2B72E6;">{{ post.title }}</h2></a>
+                                <a href="{% url 'article-detail' post.slug %}"><h2 class="h5" style="color: red;">{{ post.title }}</h2></a>
                                 <p>{{ post.content|safe|truncatewords:30 }}</p>  
                                 
                                 <ul class="dx-blog-post-info" style="margin-bottom: 60px;">

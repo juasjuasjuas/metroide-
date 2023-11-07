@@ -68,7 +68,7 @@
         <div class="container">
 
             <a href="{% url 'home' %}" class="dx-nav-logo">
-                <h2 class="text-white" style="margin-top:0px; padding-top:10px; margin-bottom:0;">PartyChan</h2>
+                <h2 class="text-white" style="margin-top:0px; padding-top:10px; margin-bottom:0;width:280px;">PartyChan 排毒</h2>
             </a>
 
             
@@ -90,7 +90,7 @@
 
             <div class="dx-navbar-content">
 
-                <ul class="dx-nav dx-nav-align-left">
+                <ul class="dx-nav dx-nav-align-left" style="margin-left:-50px;">
 
                     
                     <li class="dx-drop-item">
@@ -137,10 +137,10 @@
                     {% else %}
                     <li>
                         
-                        <a href="{% url 'login' %}">Ingresar</a>
+                        <a href="{% url 'login' %}">Iniciar Sesión</a>
                     </li>
                     <li>
-                        <span><a href="{% url 'register' %}" class="dx-btn dx-btn-md dx-btn-transparent">Registarse</a></span>
+                        <span><a href="{% url 'register' %}" class="dx-btn dx-btn-md dx-btn-transparent">Regístrate</a></span>
                     </li>
                     {% endif %}
 

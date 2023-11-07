@@ -4,10 +4,10 @@
 <div class="container">
     <div class="row">
         <div class="col-12 spacing">
-            <h1 class="text-center" style="margin-bottom:70px;">Search Result for <span class="q-term">{{ search_query }}</span></h1>
+            <h1 class="text-center" style="margin-bottom:70px;">Buscando Resultado para <span class="q-term">{{ search_query }}</span></h1>
             {% if q_count > 0 %}
                 <h2 class="text-center" style="margin-bottom:40px;"> 
-                    <span class="match-q">{{ q_count }}</span> Match{{ q_count | pluralize:"es" }} Found
+                    <span class="match-q">{{ q_count }}</span> Búsqueda{{ q_count | pluralize:"s" }} Encontrada{{ q_count | pluralize:"s" }}
                 </h2>
                 {% for topic in queryset %}
                 <div class="col-12 text-left">
@@ -19,10 +19,10 @@
                 {% endfor %}
             {% else %}
             <h2 class="text-center" style="margin-bottom:40px;"> 
-                <span class="no-match">No Match Found</span>
+                <span class="no-match">Búsqueda no encontrada</span>
             </h2>
             <p class="text-center">
-                <a class="btn btn-outline-info btn-lg" href="{% url 'home' %}" role="button">Back To Home</a>
+                <a class="btn btn-outline-info btn-lg" href="{% url 'home' %}" role="button">Volver a Home</a>
             </p>
             
             {% endif %}
