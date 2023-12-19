@@ -27,7 +27,8 @@
                 </button>
             </form>
         </div>
-
+        {% if answer.report == 2 %}
+        {% else %}
         <div class="col-lg-4">
             <form action="{% url 'reportar' %}" method="POST">
                 {% csrf_token %}
@@ -39,5 +40,6 @@
                 </button>
             </form>
         </div>
+        {% endif %}
     </div>
 </div>
