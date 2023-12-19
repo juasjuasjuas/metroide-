@@ -45,6 +45,7 @@ class Answer(models.Model):
     date_created = models.DateTimeField(auto_now_add=True, null=True)
     upvotes = models.ManyToManyField(User, blank=True, related_name='Votos_a_Favor')
     downvotes = models.ManyToManyField(User, blank=True, related_name='Votos_en_Contra')
+    report = models.IntegerField(default=0)
 
     def __str__(self):
         return self.user_post.title
@@ -72,7 +73,11 @@ class TopicView(models.Model):
         return self.user_post.title
 
     
-    
+class Reportes(models.Model):
+
+    answer_report = models.ForeignKey(Answer, on_delete=models.CASCADE)
+    content_report = models.TextField(blank=True, null=True)
+    state_report = models.IntegerField(default=0)
 
 
 

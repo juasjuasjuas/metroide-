@@ -1,6 +1,6 @@
 <div class="dx-comment-vote">
     <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-4">
             <form action="{% url 'upvote' %}" method="POST">
                 {% csrf_token %}
                 <button type="submit" id="upvote" name="answer_id" value="{{ answer.id }}"
@@ -14,7 +14,7 @@
                 </button>
             </form>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-4">
             <form action="{% url 'downvote' %}" method="POST">
                 {% csrf_token %}
                 <button type="submit" id="downvote" name="answer_id" value="{{ answer.id }}"
@@ -23,6 +23,18 @@
                     <span class="vote-tag">Downvote</span>
                     <span class="downvote-count">
                         {{ answer.downvotes.count }}
+                    </span>
+                </button>
+            </form>
+        </div>
+
+        <div class="col-lg-4">
+            <form action="{% url 'reportar' %}" method="POST">
+                {% csrf_token %}
+                <button type="submit" id="downvote" name="answer_id" value="{{ answer.id }}"
+                    class="btn btn-danger">
+                    
+                    <span class="vote-tag">Reportar</span>
                     </span>
                 </button>
             </form>

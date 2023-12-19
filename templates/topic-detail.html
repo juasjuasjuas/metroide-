@@ -27,7 +27,8 @@
                 </div>
                 <div class="dx-box mt-55">
                     {% if  answers.count > 0 %}
-                    <h2 class="h4 mb-45">{{ answers.count }} answer{{ answers|pluralize }} en este hilo: </h2>
+                    <h2 class="h4 mb-45">{{ answers.count }} respuesta{{ answers|pluralize }} en este hilo: </h2>
+                    
                     {% else %}
                     <h2 class="h4 mb-45">Sé el primero en responder este hilo!</h2>
                     {% endif %}
@@ -55,12 +56,16 @@
                                     {% endif %}
 
                                     <span class="dx-comment-date">
-                                        answered at {{ answer.date_created }}
+                                        publicado a las {{ answer.date_created }}
                                     </span>
                                 </p>
 
                                 <div class="dx-comment-text">
+                                    {% if answer.report == 2 %}
+                                    <p class="mb-0"><em>El propietario de este comentario ha sido sancionado ya que incumple las políticas de PartyChan 排毒</em></p>
+                                    {%  else %}
                                     <p class="mb-0">{{ answer.content }}</p>
+                                    {% endif %}
                                 </div>
                                 <!-- vote section -->
                                 <div id="vote-section">

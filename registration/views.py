@@ -93,3 +93,6 @@ def profileView(request):
         'profile_form':profile_form
     }
     return render(request, 'registration/profile.html', context)
+
+
+

@@ -148,6 +148,33 @@ def downvote(request):
     
     return HttpResponseRedirect(answer.user_post.get_absolute_url())
 
+def reportar(request):
+    answer = get_object_or_404(Answer, id=request.POST.get('answer_id'))
+
+    print("answer: ",answer.id)
+
+    #reporte =  get_object_or_404(Reportes, answer_report=answer.id)
+    #print("reporte", reporte)
+
+    #reporte = Reportes.objects.get(answer_report = answer.id)
+
+    if answer.report == 1:
+
+        pass
+
+    elif answer.report == 2:
+
+        pass
+
+    else:
+    
+        answer.report = 1
+        answer.save()
+
+
+    
+    return HttpResponseRedirect(answer.user_post.get_absolute_url())
+
 # Blog listing page view.
 def blogListView(request):
     
@@ -171,5 +198,39 @@ def blogDetailView(request, slug):
 
     return render(request, 'blog-detail.html', context)  
 
+@login_required(login_url='login')
+def Mod(request):
+    # User Post form.
 
+    answers = Answer.objects.filter(report = 1)
+
+    data  = {
+
+        "answers" : answers,
+
+    }
+    
+    return render(request, 'mod.html', data)
+
+def confirmar_reporte(request):
+
+    answer = get_object_or_404(Answer, id=request.POST.get('answer_id'))
+    print("confirma")
+
+    answer.report = 2
+    answer.save()
+
+
+    return redirect(Mod)
+
+def rechazar_reporte(request):
+
+    answer = get_object_or_404(Answer, id=request.POST.get('answer_id'))
+    print("rechaza")
+
+    answer.report = 3
+    answer.save()
+
+
+    return redirect(Mod)
 
